@@ -27,7 +27,7 @@ public:
 	{
 		cout << "DefConstructor:\t" << this << endl;
 	}
-	String(const char* str) :String(strlen(str) + 1)
+	String(const char* str) :size(strlen(str) + 1), str(new char[size] {})
 	{
 		for (int i = 0; str[i]; i++)this->str[i] = str[i];
 		cout << "Constructor:\t" << this << endl;
@@ -36,12 +36,13 @@ public:
 	//other
 	//this
 	//Shallow copy (Поверхностное копирование)
-	String(const String& other) :String(other.str)
+	String(const String& other) :size(other.size), str(new char[size] {})
 	{
 		//this->size = other.size;
 		//Deep copy (Побитовое копирование):
 		//this->str = new char[size] {};
-
+		for (int i = 0; i < size; i++)
+			this->str[i] = other.str[i];
 		//-----------------------------
 		cout << "CopyConstructor:" << this << endl;
 	}
