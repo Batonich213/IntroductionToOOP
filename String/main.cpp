@@ -1,4 +1,5 @@
 #include"String.h"
+#include <iostream>
 
 #define HOME_WORK
 
