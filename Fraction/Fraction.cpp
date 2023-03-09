@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "Fraction.h";
 
+Fraction operator+(const Fraction& left, const Fraction& right);
 
 int Fraction::get_integer()const
 {
